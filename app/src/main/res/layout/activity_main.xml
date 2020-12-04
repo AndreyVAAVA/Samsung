@@ -1,73 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/e_mail"
+    <include layout="@layout/left_part"
+        android:id="@+id/constant_tex"
+        android:layout_width="243dp"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/middle_part"
+        android:id="@+id/middle_edit_text"
+        android:layout_width="130dp"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toRightOf="@+id/constant_tex"/>
+
+    <include layout="@layout/calendar_part"
+        android:id="@+id/calendarpart"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:gravity="bottom"
-        android:text="Enter your e-mail"
-        android:textSize="17sp"
-        android:textColor="@color/black"/>
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toRightOf="@+id/middle_edit_text"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/e_mail"
-        android:textSize="18sp"
-        android:gravity="fill_vertical"/>
-
-    <TextView
-        android:text="Write some weird stuff"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:paddingTop="40dp"
-        android:paddingBottom="10dp"
-        android:layout_margin="120dp"
-        android:gravity="center"
-        android:layout_above="@+id/change" />
-
-    <EditText
-        android:id="@+id/change"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
-
-    <TextView android:text="Reverse your input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/change"
-        android:layout_marginStart="115dp"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:background="#7f55"/>
-
-        <TextView
-            android:id="@+id/phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="fill_vertical"
-            android:text="Enter your phone number"
-            android:textColor="@color/black"
-            android:textSize="17sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/phone"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
