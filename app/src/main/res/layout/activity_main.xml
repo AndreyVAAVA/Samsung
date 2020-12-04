@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/e_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:gravity="bottom"
+        android:text="Enter your e-mail"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/e_mail"
+        android:textSize="18sp"
+        android:gravity="fill_vertical"/>
+
+    <TextView
+        android:text="Write some weird stuff"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="10dp"
+        android:layout_margin="120dp"
+        android:gravity="center"
+        android:layout_above="@+id/change" />
+
+    <EditText
+        android:id="@+id/change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <TextView android:text="Reverse your input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/change"
+        android:layout_marginStart="115dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="#7f55"/>
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="fill_vertical"
+            android:text="Enter your phone number"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/phone"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+</RelativeLayout>
