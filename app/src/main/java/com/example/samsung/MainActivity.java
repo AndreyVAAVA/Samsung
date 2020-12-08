@@ -14,18 +14,17 @@ import android.widget.TextView;
 import static android.provider.ContactsContract.Intents.Insert.ACTION;
 
 public class MainActivity extends AppCompatActivity {
-
+    static String true_login = "randommail@samsung.com";
+    static String true_password = "Random1234";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText editText_a = (EditText) findViewById(R.id.a);
-        EditText editText_b = (EditText) findViewById(R.id.b);
-        EditText editText_c = (EditText) findViewById(R.id.c);
-        Button button = (Button) findViewById(R.id.result);;
-        TextView textView_1 = (TextView) findViewById(R.id.X_1);
-        TextView textView_2 = (TextView) findViewById(R.id.X_2);
+        EditText editText_log = (EditText) findViewById(R.id.editText_log);
+        EditText editText_pswd = (EditText) findViewById(R.id.editText_pswd);
+        Button button = (Button) findViewById(R.id.btn);;
+        TextView result = (TextView) findViewById(R.id.result);
 
         /*editText_a.addTextChangedListener(new TextWatcher() {
 
@@ -43,24 +42,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
         button.setOnClickListener((View.OnClickListener) v -> {
-            int a = Integer.parseInt(editText_a.getText().toString());
-            int b = Integer.parseInt(editText_b.getText().toString());
-            int c = Integer.parseInt(editText_c.getText().toString());
-            double discr = ((b*b) - (4*a*c));
-            double x_1 = (((-b) + Math.sqrt(discr)) / (2*a));
-            double x_2 = (((-b) - Math.sqrt(discr)) / (2*a));
-            String x1 = String.valueOf(x_1);
-            String x2 = String.valueOf(x_2);
-            // Обработка нажатия
-            if(a == 0 && b == 0) {
-                textView_1.setText("(-беск;беск)");
-                textView_2.setText("(-беск;беск)");
-            } else if((a == 0 && b != 0 && c == 0) || (a != 0 && b == 0 && c == 0)){
-                textView_1.setText("0");
-                textView_2.setText("0");
-            } else {
-                textView_1.setText(x1);
-                textView_2.setText(x2);
+            String login = editText_log.getText().toString().toLowerCase();
+            String password = editText_pswd.getText().toString();
+            if((login.equals(true_login)) && (password.equals(true_password))){
+                result.setText("Верно");
+                result.setBackgroundResource(R.color.green);
+            } else{
+                result.setText("Вы ошиблись в логине или пароле");
+                result.setBackgroundResource(R.color.red);
+                editText_log.setText("");
+                editText_pswd.setText("");
             }
         });
     }
