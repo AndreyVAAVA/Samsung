@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Samsung</string>
+    <string name="input">Решение квадратных уравнений</string>
+    <string name="instructions">Введите значения</string>
+    <string name="a">a</string>
+    <string name="b">b</string>
+    <string name="c">c</string>
+    <string name="calculate">Посчитать</string>
+    <string name="result">Результат</string>
+    <string name="x_1">x1 = </string>
+    <string name="x_2">x2 = </string>
 </resources>
