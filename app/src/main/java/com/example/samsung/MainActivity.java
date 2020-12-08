@@ -52,8 +52,16 @@ public class MainActivity extends AppCompatActivity {
             String x1 = String.valueOf(x_1);
             String x2 = String.valueOf(x_2);
             // Обработка нажатия
-            textView_1.setText(x1);
-            textView_2.setText(x2);
+            if(a == 0 && b == 0) {
+                textView_1.setText("(-беск;беск)");
+                textView_2.setText("(-беск;беск)");
+            } else if((a == 0 && b != 0 && c == 0) || (a != 0 && b == 0 && c == 0)){
+                textView_1.setText("0");
+                textView_2.setText("0");
+            } else {
+                textView_1.setText(x1);
+                textView_2.setText(x2);
+            }
         });
     }
 }
